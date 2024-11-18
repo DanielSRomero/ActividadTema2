@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ActividadTema2</string>
+
+    <string name="name_prefered_shared_fich">shared_fich</string>
+
+    <string name="name_shared_phone">phone_number</string>
+
+
+</resources>
