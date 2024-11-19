@@ -5,5 +5,12 @@
 
     <string name="name_shared_phone">phone_number</string>
 
+    <string name="conf_chistes">conf_chistes</string>
 
+    <string-array name="idiomas">
+        <item>Español</item>
+        <item>English</item>
+    </string-array>
+
+    <string name="idioma_chistes">idioma_chistes</string>
 </resources>

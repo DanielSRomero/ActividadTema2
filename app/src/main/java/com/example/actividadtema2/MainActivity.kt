@@ -56,5 +56,9 @@ class MainActivity : AppCompatActivity() {
             }
             startActivity(emailIntent)
         }
+        confBinding.juego.setOnClickListener {
+            val juegoIntent = Intent(this, DadosActivity::class.java)
+            startActivity(juegoIntent)
+        }
     }
 }
