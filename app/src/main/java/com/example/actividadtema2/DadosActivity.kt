@@ -15,7 +15,8 @@ import kotlin.random.Random
 
 class DadosActivity : AppCompatActivity() {
     private lateinit var bindingDados : ActivityDadosBinding
-    private var sum : Int = 0
+    private var sumUser : Int = 0
+    private var sumDealer : Int = 0
 
 
 
@@ -33,11 +34,8 @@ class DadosActivity : AppCompatActivity() {
             val mainIntent = Intent(this, MainActivity::class.java)
             startActivity(mainIntent)
         }
-        bindingDados.txtResultado.visibility = View.INVISIBLE
         bindingDados.imageButton.setOnClickListener{
-            bindingDados.txtResultado.visibility = View.VISIBLE
             game()
-
         }
     }
 
@@ -68,16 +66,23 @@ class DadosActivity : AppCompatActivity() {
     }
     private fun throwDadoInTime() {
         val miAnimacion = AnimationUtils.loadAnimation(this, R.anim.animacion)
-        val numDados = Array(3){Random.nextInt(1, 6)}
+        val numDadosUser = Array(3){Random.nextInt(1, 6)}
+        val numDadosDealer = Array(3){Random.nextInt(1, 6)}
         val imagViews : Array<ImageView> = arrayOf<ImageView>(
             bindingDados.imagviewDado1,
             bindingDados.imagviewDado2,
-            bindingDados.imagviewDado3)
+            bindingDados.imagviewDado3,
+            bindingDados.imagviewDado4,
+            bindingDados.imagviewDado5,
+            bindingDados.imagviewDado6)
 
-        sum = numDados.sum()
+        sumUser = numDadosUser.sum()
+        sumDealer = numDadosDealer.sum()
         for (i in 0..3) {
-            selectView(imagViews[i], numDados[i])
+            selectView(imagViews[i], numDadosUser[i])
             imagViews[i].startAnimation(miAnimacion)
+            selectView(imagViews[i+3], numDadosDealer[i])
+            imagViews[i+3].startAnimation(miAnimacion)
         }
     }
 
@@ -94,8 +99,16 @@ class DadosActivity : AppCompatActivity() {
     }
 
     private fun viewResult() {
-        bindingDados.txtResultado.text = sum.toString()
-        println(sum)
+        bindingDados.txtResultado.text = sumUser.toString()
+        bindingDados.txtResultadoDealer.text = sumDealer.toString()
+        if (bindingDados.txtResultado.toString() > bindingDados.txtResultadoDealer.toString())
+            bindingDados.resultadoJuego.text = "Victoria"
+        else{
+            bindingDados.resultadoJuego.text = "Derrota"
+        }
+
+        println(sumUser)
+        println(sumDealer)
     }
 
 }

@@ -84,16 +84,18 @@ class ConfigActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 confBinding.spinner.visibility = View.INVISIBLE
                 confBinding.checkBox.visibility = View.INVISIBLE
                 confBinding.radioGroup.visibility = View.INVISIBLE
+                confBinding.gustos.visibility = View.INVISIBLE
             }
         }
             confBinding.guardar.setOnClickListener {
                 if (confBinding.tel.text.isNotBlank()) {
                     sharedFich.edit().putString(
                         nameSharedPhone, confBinding.tel.text.toString()).apply()
-                sharedFich.edit().putString(
-                    confChistes, findViewById<RadioButton>(
-                        confBinding.radioGroup.checkedRadioButtonId).text.toString()).apply()
-                    startMainActivity()            }
+                    sharedFich.edit().putString(
+                        confChistes, findViewById<RadioButton>(
+                            confBinding.radioGroup.checkedRadioButtonId).text.toString()).apply()
+                    startMainActivity()
+                }
                 else {
                     Toast.makeText(this, "Introduzca un numero", Toast.LENGTH_SHORT).show()}
             }

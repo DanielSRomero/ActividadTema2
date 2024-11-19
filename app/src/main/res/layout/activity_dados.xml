@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/txt_resultado_dealer"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imagview_dado6"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/imagview_dado6"
+        app:layout_constraintTop_toBottomOf="@+id/imagview_dado6"
+        app:layout_constraintVertical_bias="0.354" />
+
+
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
@@ -20,8 +36,9 @@
         android:id="@+id/imagview_dado1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton"
         app:srcCompat="@drawable/dado1" />
@@ -46,19 +63,51 @@
         app:layout_constraintTop_toBottomOf="@+id/imagview_dado2"
         app:srcCompat="@drawable/dado1" />
 
+    <ImageView
+        android:id="@+id/imagview_dado4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton"
+        app:srcCompat="@drawable/dado1" />
+
+    <ImageView
+        android:id="@+id/imagview_dado5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        app:layout_constraintEnd_toEndOf="@+id/imagview_dado4"
+        app:layout_constraintTop_toBottomOf="@+id/imagview_dado4"
+        app:srcCompat="@drawable/dado1" />
+
+    <ImageView
+        android:id="@+id/imagview_dado6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        app:layout_constraintStart_toStartOf="@+id/imagview_dado5"
+        app:layout_constraintTop_toBottomOf="@+id/imagview_dado5"
+        app:srcCompat="@drawable/dado1" />
+
     <TextView
         android:id="@+id/txt_resultado"
-        android:layout_width="177dp"
-        android:layout_height="73dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
         android:text="0"
+        android:gravity="center"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imagview_dado3"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/imagview_dado3"
         app:layout_constraintTop_toBottomOf="@+id/imagview_dado3"
-        app:layout_constraintVertical_bias="0.511" />
+        app:layout_constraintVertical_bias="0.354" />
 
     <Button
         android:id="@+id/button"
@@ -69,5 +118,36 @@
         android:text="Volver"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tú"
+        android:textSize="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/imagview_dado1"
+        app:layout_constraintEnd_toEndOf="@+id/imagview_dado1"
+        app:layout_constraintStart_toStartOf="@+id/imagview_dado1" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dealer"
+        android:textSize="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/imagview_dado4"
+        app:layout_constraintEnd_toEndOf="@+id/imagview_dado4"
+        app:layout_constraintStart_toStartOf="@+id/imagview_dado4" />
+
+    <TextView
+        android:id="@+id/resultadoJuego"
+        android:layout_width="120sp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="188dp"
+        android:text=""
+        android:textSize="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
