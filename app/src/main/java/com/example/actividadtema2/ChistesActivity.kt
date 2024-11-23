@@ -1,5 +1,6 @@
 package com.example.actividadtema2
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -21,6 +22,7 @@ import kotlin.random.Random
 
 class ChistesActivity : AppCompatActivity() {
 
+    private var isRunning = false
     private lateinit var confBinding : ActivityChistesBinding
     private lateinit var textToSpeech: TextToSpeech  //descriptor de voz
     private val TOUCH_MAX_TIME = 500 // en milisegundos
@@ -34,11 +36,17 @@ class ChistesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        isRunning = true
         confBinding = ActivityChistesBinding.inflate(layoutInflater)
         setContentView(confBinding.root)
         confBinding.btnExample.visibility = View.GONE  //ocultamos el botón.
         initPreferedShared()
         configureTextToSpeech()  //configuramos nuestro textToSpeech
+    }
+
+    override fun onStop() {
+        super.onStop()
+        isRunning = false
     }
     private fun initPreferedShared() {
         val nameSharedFich = getString(R.string.name_prefered_shared_fich)
@@ -98,6 +106,18 @@ class ChistesActivity : AppCompatActivity() {
     }
 
     private fun initEvent(chiste: Array<String>) {
+        Thread{
+            while (isRunning){
+                while (textToSpeech.isSpeaking) {
+                    runOnUiThread{
+                    confBinding.progressBar.visibility = View.VISIBLE
+                    }
+                }
+                runOnUiThread{
+                    confBinding.progressBar.visibility = View.GONE
+                }
+            }
+        }.start()
         confBinding.btnExample.setOnClickListener{
             //Sacamos el tiempo actual
             val currentTime = System.currentTimeMillis()
@@ -124,25 +144,11 @@ class ChistesActivity : AppCompatActivity() {
     }
     private fun speakMeDescription(s: String) {
         textToSpeech.speak(s, TextToSpeech.QUEUE_FLUSH, null, null)
-        confBinding.progressBar.visibility = View.VISIBLE
-        Thread{
-            while (textToSpeech.isSpeaking) {
-            }
-            runOnUiThread{
-                confBinding.progressBar.visibility = View.GONE
-            }
-
-        }.start()
-
-
 
     }
 
     private fun executorDoubleTouch(chiste: String) {
         speakMeDescription(chiste)
-    }
-    private fun interrumpo(){
-        textToSpeech.stop()
     }
 
     override fun onDestroy() {
