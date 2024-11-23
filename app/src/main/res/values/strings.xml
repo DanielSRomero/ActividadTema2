@@ -13,4 +13,38 @@
     </string-array>
 
     <string name="idioma_chistes">idioma_chistes</string>
+
+    <string-array name="chistes">
+        <item>Dime con quién andas y te diré quién eres. ¿Pero y si no ando con nadie?. Pues eres feo</item>
+        <item>¿Por qué no puedes confiar en un átomo? ¡Porque lo inventan todo!</item>
+        <item>¿Por qué la computadora fue al doctor? ¡Porque tenía un virus!</item>
+        <item>¿Por qué el jugador de golf trajo dos pantalones? Por si hacía un hoyo en uno </item>
+        <item>¿Qué le dijo el semáforo al coche? ¡No me mires, que me estoy cambiando!</item>
+    </string-array>
+
+    <string-array name="jokes">
+        <item>Tell me who you hang out with, and I’ll tell you who you are. But what if I don’t hang out with anyone? Well, then you’re ugly.</item>
+        <item>Why can\'t you trust atoms? Because they make up everything!</item>
+        <item>Why did the golfer bring two pairs of pants? In case he got a hole in one!</item>
+        <item>Why did the computer go to the doctor? Because it had a virus!</item>
+        <item>What did the traffic light say to the car? Don’t look at me, I’m changing!</item>
+    </string-array>
+
+    <string-array name="good_jokes">
+        <item>My grief counselor died. He was so good, I don’t even care.</item>
+        <item>Today, I asked my phone “Siri, why am I still single?” and it activated the front camera.</item>
+        <item>What\'s red and bad for your teeth? A brick</item>
+        <item>I visited my new friend in his apartment. He told me to make myself at home. So I threw him out. I hate having visitors.</item>
+        <item>Give a man a match, and he’ll be warm for a few hours. Set him on fire, and he will be warm for the rest of his life.</item>
+    </string-array>
+
+    <string-array name="buenos_chistes">
+        <item>Mi terapeuta ha muerto. Era tan bueno que ni me importa.</item>
+        <item>Hoy le pregunté a mi teléfono “Siri, ¿Por qué aún estoy soltero?” Y activó la cámara delantera.</item>
+        <item>¿Qué es rojo y malo para los dientes? Un ladrillo.</item>
+        <item>Visité a mi nuevo amigo en su apartamento. Me dijo que me sintiera como en mi casa. Así que lo eché. Odio tener visitas.</item>
+        <item>Dale un partido a un hombre y estará caliente durante unas horas. Si le prendes fuego, estará caliente durante el resto de su vida.</item>
+    </string-array>
+
+    <string name="describe">Presione aquí para escuchar un maravilloso chiste</string>
 </resources>

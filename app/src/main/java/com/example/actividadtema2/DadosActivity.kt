@@ -101,11 +101,10 @@ class DadosActivity : AppCompatActivity() {
     private fun viewResult() {
         bindingDados.txtResultado.text = sumUser.toString()
         bindingDados.txtResultadoDealer.text = sumDealer.toString()
-        if (bindingDados.txtResultado.toString() > bindingDados.txtResultadoDealer.toString())
-            bindingDados.resultadoJuego.text = "Victoria"
-        else{
-            bindingDados.resultadoJuego.text = "Derrota"
-        }
+        if (sumUser > sumDealer) bindingDados.resultadoJuego.text = "Victoria"
+        else if (sumDealer>sumUser) bindingDados.resultadoJuego.text = "Derrota"
+        else bindingDados.resultadoJuego.text = "Empate"
+
 
         println(sumUser)
         println(sumDealer)

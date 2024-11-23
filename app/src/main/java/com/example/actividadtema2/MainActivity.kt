@@ -60,5 +60,9 @@ class MainActivity : AppCompatActivity() {
             val juegoIntent = Intent(this, DadosActivity::class.java)
             startActivity(juegoIntent)
         }
+        confBinding.chistes.setOnClickListener {
+            val chistesIntent = Intent(this, ChistesActivity::class.java)
+            startActivity(chistesIntent)
+        }
     }
 }
