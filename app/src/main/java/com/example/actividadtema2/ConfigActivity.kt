@@ -52,6 +52,7 @@ class ConfigActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         confBinding.toggleButton.setOnClickListener {
             if (confBinding.toggleButton.isChecked) {
                 confBinding.checkBox.isChecked = false
+                confBinding.textView.visibility = View.VISIBLE
                 confBinding.spinner.visibility = View.VISIBLE
                 confBinding.gustos.visibility = View.VISIBLE
                 confBinding.checkBox.visibility = View.VISIBLE
